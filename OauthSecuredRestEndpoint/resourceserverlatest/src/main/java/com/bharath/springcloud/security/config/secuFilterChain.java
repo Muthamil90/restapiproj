@@ -15,7 +15,8 @@ public class secuFilterChain implements SecurityFilterChain {
 	@Override
 	public boolean matches(HttpServletRequest request) {
 		String header = request.getHeader("Application-name");
-		if (header.equalsIgnoreCase("ABCD")) {
+
+		if (header != null && header.equalsIgnoreCase("AUTH")) {
 			System.out.println("abc");
 			return true;
 		}
